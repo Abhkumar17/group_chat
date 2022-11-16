@@ -42,8 +42,8 @@ class GroupController extends Controller
         ]);
         //we attach the user with the group after he created it
         $group->participants()->attach(auth()->user()->id);
-        return response()->json(['success' => 'Group created successfully.']);
-       // return redirect('/home')->with('success', 'Your group has been created');
+       // return response()->json(['success' => 'Group created successfully.']);
+        return redirect('/home')->with('success', 'Your group has been created');
     }
 
     //display the form to join a group
